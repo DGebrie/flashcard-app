@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { PlusIcon, TrashIcon, EyeIcon, BookIcon } from "@primer/octicons-react";
 import { listDecks, deleteDeck } from "../utils/api/index.js";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function DeckList() {
   const [decks, setDecks] = useState([]);
+  const { deckId } = useParams();
 
   useEffect(() => {
     async function loadData() {
@@ -45,9 +46,12 @@ export default function DeckList() {
               <EyeIcon size={24} /> View
             </Link>
 
-            <Link to="#" class="btn btn-primary" style={{ marginLeft: "10px" }}>
-              <BookIcon size={24} />
-              Study
+            <Link
+              to={`/decks/${deckId}/study`}
+              class="btn btn-primary"
+              style={{ marginLeft: "10px" }}
+            >
+              <BookIcon size={24} /> Study
             </Link>
             <Link
               to="/"

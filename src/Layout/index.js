@@ -6,10 +6,13 @@ import DeckList from "./DeckList";
 import CreateDeck from "./CreateDeck";
 import Deck from "./Deck";
 import EditDeck from "./EditDeck";
+import AddCard from "./AddCard";
+import EditCard from "./EditCard";
+import StudyDeck from "./StudyDeck";
 
 function Layout() {
   return (
-    <>
+    <div>
       {/* TODO: Implement the screen starting here */}
       <Header />
       <div className="container">
@@ -29,10 +32,24 @@ function Layout() {
             <EditDeck />
           </Route>
 
-          {/* <NotFound /> */}
+          <Route exact path="/decks/:deckId/cards/new">
+            <AddCard />
+          </Route>
+
+          <Route exact path="/decks/:deckId/cards/:cardId/edit">
+            <EditCard />
+          </Route>
+
+          <Route path="/decks/:deckId/study">
+            <StudyDeck />
+          </Route>
+
+          <Route>
+            <NotFound />
+          </Route>
         </Switch>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -30,9 +30,11 @@ export default function EditDeck() {
   async function updatedDeck(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
+    console.log(formData.get("name"));
     const deck = {
       id: deckId,
       name: formData.get("name"),
+
       description: formData.get("description"),
     };
     try {
@@ -42,33 +44,70 @@ export default function EditDeck() {
       console.log(error);
     }
   }
+
   return (
-    <>
+    <div>
       {deck && (
         //   Breadcrumb - displaying path to this page
-        <>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <Link to="/">
-                  <HomeFillIcon size={16} />
-                  Home
-                </Link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <Link to={`/decks/${deckID}`}>{deck.name}</Link>
-              </li>
-              <li className="breadcrumb-item active" aria-current="page">
-                Edit Deck
-              </li>
-            </ol>
-          </nav>
+        <div>
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <Link to="/">
+                    <HomeFillIcon size={16} />
+                    Home
+                  </Link>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  <Link to={`/decks/${deckId}`}>{deck.name}</Link>
+                </li>
+                <li className="breadcrumb-item active" aria-current="page">
+                  Edit Deck
+                </li>
+              </ol>
+            </nav>
+          </div>
 
           <h1>Edit Deck</h1>
-        </>
-        //Form that includes a title Cards then the name (with placeholder of deck name)
-        // and a Desciption with placeholder of deck description
+          <form onSubmit={updatedDeck}>
+            <div class="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                id="name"
+                defaultValue={deck.name}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="description">Description</label>
+              <textarea
+                className="form-control"
+                name="description"
+                id="description"
+                rows="3"
+                defaultValue={deck.description}
+              ></textarea>
+            </div>
+            <Link
+              to={`/decks/${deckId}`}
+              type="button"
+              className="btn btn-secondary"
+            >
+              Cancel
+            </Link>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ marginLeft: "10px" }}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       )}
-    </>
+    </div>
   );
 }

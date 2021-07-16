@@ -14,7 +14,8 @@ import EditDeck from "./EditDeck";
 
 export default function Deck() {
   const [deck, setDeck] = useState();
-  const { deckId } = useParams();
+  const { deckId, cardId } = useParams();
+
   console.log(deckId);
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function Deck() {
                 {/* Change icon update link */}
 
                 <Link
-                  to="#"
+                  to={`/decks/${deckId}/study`}
                   class="btn btn-primary"
                   style={{ marginLeft: "10px" }}
                 >
@@ -64,7 +65,7 @@ export default function Deck() {
                 {/* Change icon update link*/}
 
                 <Link
-                  to="#"
+                  to={`/decks/${deckId}/cards/new`}
                   class="btn btn-primary"
                   style={{ marginLeft: "10px" }}
                 >
@@ -100,7 +101,7 @@ export default function Deck() {
                       <p className="card-text">{card.back}</p>
                       <div className="icons" style={{ float: "right" }}>
                         <Link
-                          to="#"
+                          to={`/decks/${deckId}/cards/${card.id}/edit`}
                           class="btn btn-primary"
                           style={{ size: "24px" }}
                         >
