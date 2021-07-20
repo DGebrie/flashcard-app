@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 
 export default function DeckList() {
   const [decks, setDecks] = useState([]);
-  const { deckId } = useParams();
 
   useEffect(() => {
     async function loadData() {
@@ -17,7 +16,7 @@ export default function DeckList() {
       }
     }
     loadData();
-  });
+  }, []);
 
   async function deleteHandler(id) {
     if (window.confirm("Are you sure you want to delete this deck?")) {
@@ -38,7 +37,7 @@ export default function DeckList() {
           <div class="card-body">
             <h5 class="card-title">{deck.name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">
-              {deck.cards.length}
+              {deck.cards.length} cards
             </h6>
             <p class="card-text">{deck.description}</p>
 
@@ -47,7 +46,7 @@ export default function DeckList() {
             </Link>
 
             <Link
-              to={`/decks/${deckId}/study`}
+              to={`/decks/${deck.id}/study`}
               class="btn btn-primary"
               style={{ marginLeft: "10px" }}
             >

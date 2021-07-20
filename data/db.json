@@ -6,29 +6,9 @@
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
     },
     {
-      "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
-      "id": 2
-    },
-    {
       "id": 4,
       "name": "123",
       "description": "456"
-    },
-    {
-      "name": "Wnat",
-      "description": "it do",
-      "id": 5
-    },
-    {
-      "name": "Hi",
-      "description": "Hi",
-      "id": 6
-    },
-    {
-      "name": "hi",
-      "description": "hello",
-      "id": 7
     }
   ],
   "cards": [
@@ -51,18 +31,6 @@
       "deckId": 1
     },
     {
-      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all URL's",
-      "deckId": 2,
-      "id": 4
-    },
-    {
-      "front": "What does <Switch> do?",
-      "back": "Renders the first matching child <Route> ",
-      "deckId": 2,
-      "id": 5
-    },
-    {
       "deckId": 1,
       "id": 7,
       "front": "b-hi",
@@ -79,18 +47,6 @@
       "id": 9,
       "front": "Hi-bye",
       "back": "Bye-hi"
-    },
-    {
-      "deckId": 5,
-      "id": 10,
-      "front": "Hi",
-      "back": "----"
-    },
-    {
-      "front": "hi",
-      "back": "bye",
-      "deckId": 5,
-      "id": 11
     },
     {
       "front": "whats",

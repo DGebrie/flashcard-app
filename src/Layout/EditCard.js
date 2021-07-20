@@ -70,9 +70,7 @@ export default function EditCard() {
                   </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  <Link to={`/decks/${deckId}/cards/${cardId}/edit`}>
-                    Deck {deck.name}
-                  </Link>
+                  <Link to={`/decks/${deckId}`}>Deck {deck.name}</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Edit Card {cardId}
@@ -104,7 +102,7 @@ export default function EditCard() {
               ></textarea>
             </div>
             <Link
-              to={`/decks/${deckId}/cards`}
+              to={`/decks/${deckId}`}
               type="button"
               className="btn btn-secondary"
             >
