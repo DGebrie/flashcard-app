@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PlusIcon, TrashIcon, EyeIcon, BookIcon } from "@primer/octicons-react";
 import { listDecks, deleteDeck } from "../utils/api/index.js";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function DeckList() {
   const [decks, setDecks] = useState([]);

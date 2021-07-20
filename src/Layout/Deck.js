@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import {
-  PlusIcon,
   TrashIcon,
-  EyeIcon,
   BookIcon,
   PencilIcon,
   PlusCircleIcon,
 } from "@primer/octicons-react";
-import { readDeck, deleteDeck, listCards } from "../utils/api/index.js";
-import { Link, useParams, useHistory, Switch, Route } from "react-router-dom";
-import DeckList from "./DeckList.js";
-import EditDeck from "./EditDeck";
+import {
+  readDeck,
+  deleteDeck,
+  listDecks,
+  deleteCard,
+} from "../utils/api/index.js";
+import { Link, useParams } from "react-router-dom";
 
 export default function Deck() {
   const [deck, setDeck] = useState();
-  const { deckId, cardId } = useParams();
-
-  console.log(deckId);
+  const { deckId } = useParams();
 
   useEffect(() => {
     async function loadData() {
@@ -29,6 +28,31 @@ export default function Deck() {
     }
     loadData();
   }, [deckId]);
+
+  async function deleteHandler(id) {
+    if (window.confirm("Are you sure you want to delete this deck?")) {
+      try {
+        await deleteDeck(id);
+        const screen = await listDecks();
+        setDeck(screen);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
+  async function deleteCardHandler(id) {
+    if (
+      window.confirm("Delete this card? You will not be able to recover it.")
+    ) {
+      try {
+        await deleteCard(id);
+      } catch (error) {
+        console.log(error);
+      }
+      window.location.reload();
+    }
+  }
 
   return (
     <>
@@ -73,14 +97,13 @@ export default function Deck() {
                 </Link>
                 {/* Change icon update link*/}
 
-                <Link
-                  to="/"
+                <button
                   class="btn btn-danger"
                   style={{ float: "right" }}
-                  //   onClick={() => deleteHandler(deck.card)}
+                  onClick={() => deleteHandler(deck.id)}
                 >
                   <TrashIcon size={24} />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -108,7 +131,7 @@ export default function Deck() {
                           <PencilIcon size={24} /> Edit
                         </Link>
                         <button
-                          to="#"
+                          onClick={() => deleteCardHandler(card.id)}
                           class="btn btn-danger"
                           style={{ marginLeft: "10px" }}
                         >

@@ -1,5 +1,4 @@
 import React from "react";
-import { PlusIcon, TrashIcon, EyeIcon, BookIcon } from "@primer/octicons-react";
 import { createDeck } from "../utils/api/index.js";
 import { Link, useHistory } from "react-router-dom";
 
