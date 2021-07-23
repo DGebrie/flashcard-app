@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { HomeFillIcon } from "@primer/octicons-react";
 import { updateCard, readCard, readDeck } from "../utils/api/index.js";
+import CardForm from "./CardForm.js";
 
 export default function EditCard() {
   const [deck, setDeck] = useState();
@@ -44,8 +45,8 @@ export default function EditCard() {
     const card = {
       deckId: Number(deckId),
       id: cardId,
-      front: formData.get("frontCard"),
-      back: formData.get("backCard"),
+      front: formData.get("front"),
+      back: formData.get("back"),
     };
     try {
       await updateCard(card);
@@ -79,43 +80,11 @@ export default function EditCard() {
             </nav>
           </div>
           <h1>Edit Card</h1>
-          <form onSubmit={updatedCard}>
-            <div className="form-group">
-              <label htmlFor="frontCard">Front</label>
-              <input
-                type="text"
-                name="frontCard"
-                className="form-control"
-                id="frontCard"
-                rows="2"
-                defaultValue={frontCard}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="back">Back</label>
-              <textarea
-                className="form-control"
-                name="backCard"
-                id="back"
-                rows="2"
-                defaultValue={backCard}
-              ></textarea>
-            </div>
-            <Link
-              to={`/decks/${deckId}`}
-              type="button"
-              className="btn btn-secondary"
-            >
-              Cancel
-            </Link>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              style={{ marginLeft: "10px" }}
-            >
-              Submit
-            </button>
-          </form>
+          <CardForm
+            submitHandler={updatedCard}
+            front={frontCard}
+            back={backCard}
+          />
         </div>
       )}
     </div>

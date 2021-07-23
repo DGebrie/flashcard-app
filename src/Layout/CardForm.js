@@ -15,7 +15,7 @@ export default function CardForm(props) {
             name="front"
             placeholder="Front side of card"
             rows="2"
-            value={props.formData.front}
+            defaultValue={props.front}
           />
         </div>
 
@@ -27,7 +27,7 @@ export default function CardForm(props) {
             name="back"
             rows="2"
             placeholder="Back side of card"
-            value={props.formData.back}
+            defaultValue={props.back}
           ></textarea>
         </div>
         <Link to={`/decks/${deckId}`} type="button" class="btn btn-secondary">
