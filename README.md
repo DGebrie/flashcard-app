@@ -1,4 +1,4 @@
-# ======== Flashcard-O-Matic =======
+# Flashcard-O-Matic 
 
 
 ##### Tech Stack
