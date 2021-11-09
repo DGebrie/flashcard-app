@@ -1,1 +1,5 @@
-# ======== Flashcard App =======
+# ======== Flashcard-O-Matic =======
+
+
+##### Tech Stack
+> * JavaScript
