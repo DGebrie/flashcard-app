@@ -19,3 +19,6 @@
 
 > Run the following from the root of the directory to run tests
 > * ```npm test```
+
+
+#### Happy Coding! :)
