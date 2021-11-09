@@ -12,7 +12,7 @@
 
 ##### Development
 > Run the following from the root of the directory to install dependencies
->  * npm install
+>  * npm install#1
 
 > Run the following from the root of the directory to run the app locally
 > * npm start
