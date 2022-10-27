@@ -33,28 +33,28 @@ export default function DeckList() {
   const ListDeck = decks.map((deck) => {
     return (
       <div>
-        <div class="card w-75">
-          <div class="card-body">
-            <h5 class="card-title">{deck.name}</h5>
+        <div className="card w-75">
+          <div className="card-body">
+            <h5 className="card-title">{deck.name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">
               {deck.cards.length} cards
             </h6>
-            <p class="card-text">{deck.description}</p>
+            <p className="card-text">{deck.description}</p>
 
-            <Link to={`/decks/${deck.id}`} class="btn btn-secondary">
+            <Link to={`/decks/${deck.id}`} className="btn btn-secondary">
               <EyeIcon size={24} /> View
             </Link>
 
             <Link
               to={`/decks/${deck.id}/study`}
-              class="btn btn-primary"
+              className="btn btn-primary"
               style={{ marginLeft: "10px" }}
             >
               <BookIcon size={24} /> Study
             </Link>
             <Link
               to="/"
-              class="btn btn-danger"
+              className="btn btn-danger"
               style={{ float: "right" }}
               onClick={() => deleteHandler(deck.id)}
             >
@@ -68,7 +68,7 @@ export default function DeckList() {
 
   return (
     <>
-      <Link to="/decks/new" type="button" class="btn btn-secondary btn-lg">
+      <Link to="/decks/new" type="button" className="btn btn-secondary btn-lg">
         <PlusIcon size={24} />
         Create Deck
       </Link>

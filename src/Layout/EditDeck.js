@@ -52,14 +52,14 @@ export default function EditDeck() {
         <div>
           <div>
             <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
                   <Link to="/">
                     <HomeFillIcon size={16} />
                     Home
                   </Link>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">
+                <li className="breadcrumb-item active" aria-current="page">
                   <Link to={`/decks/${deckId}`}>{deck.name}</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
@@ -71,7 +71,7 @@ export default function EditDeck() {
 
           <h1>Edit Deck</h1>
           <form onSubmit={updatedDeck}>
-            <div class="form-group">
+            <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
                 type="text"

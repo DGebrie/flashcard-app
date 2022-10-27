@@ -5,7 +5,7 @@ export default function CardForm(props) {
   return (
     <div>
       <form onSubmit={props.submitHandler}>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="front">Front</label>
           <textarea
             required
@@ -19,7 +19,7 @@ export default function CardForm(props) {
           />
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="back">Back</label>
           <textarea
             className="form-control"
@@ -30,12 +30,16 @@ export default function CardForm(props) {
             defaultValue={props.back}
           ></textarea>
         </div>
-        <Link to={`/decks/${deckId}`} type="button" class="btn btn-secondary">
+        <Link
+          to={`/decks/${deckId}`}
+          type="button"
+          className="btn btn-secondary"
+        >
           Done
         </Link>
         <button
           type="submit"
-          class="btn btn-primary"
+          className="btn btn-primary"
           style={{ marginLeft: "10px" }}
         >
           Save

@@ -23,45 +23,45 @@ export default function CreateDeck() {
   return (
     <>
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
             <Link to="/">Home</Link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
+          <li className="breadcrumb-item active" aria-current="page">
             Create Deck
           </li>
         </ol>
       </nav>
       <h2>Create Deck</h2>
       <form onSubmit={submitHandler}>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleFormControlInput1">Name</label>
           <input
             required
             type="text"
-            class="form-control"
+            className="form-control"
             id="name"
             name="name"
             placeholder="Deck Name"
           />
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleFormControlTextarea1">Description</label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="description"
             name="description"
             rows="3"
             placeholder="Brief description of the deck"
           ></textarea>
         </div>
-        <Link to="/" type="button" class="btn btn-secondary">
+        <Link to="/" type="button" className="btn btn-secondary">
           Cancel
         </Link>
         <button
           type="submit"
-          class="btn btn-primary"
+          className="btn btn-primary"
           style={{ marginLeft: "10px" }}
         >
           Submit
@@ -69,7 +69,7 @@ export default function CreateDeck() {
       </form>
     </>
     //   {/*
-    // <button type="button" class="btn btn-secondary btn-lg">
+    // <button type="button" className="btn btn-secondary btn-lg">
     //   <PlusIcon size={24} />
     //   Create Deck
     // </button> */}

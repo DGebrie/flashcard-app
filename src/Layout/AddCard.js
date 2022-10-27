@@ -46,13 +46,13 @@ export default function AddCard() {
         <div>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li class="breadcrumb-item">
+              <li className="breadcrumb-item">
                 <Link to="/">Home</Link>
               </li>
-              <li class="breadcrumb-item">
+              <li className="breadcrumb-item">
                 <Link to={`/decks/${deckId}`}>{deck.name}</Link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 Add Card
               </li>
             </ol>

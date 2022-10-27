@@ -59,29 +59,32 @@ export default function Deck() {
       {deck && (
         <>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link to="/">Home</Link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 {deck.name}
               </li>
             </ol>
           </nav>
           <div>
-            <div class="card w-75">
-              <div class="card-body">
-                <h2 class="card-title">{deck.name}</h2>
-                <p class="card-text">{deck.description}</p>
+            <div className="card w-75">
+              <div className="card-body">
+                <h2 className="card-title">{deck.name}</h2>
+                <p className="card-text">{deck.description}</p>
 
-                <Link to={`/decks/${deckId}/edit`} class="btn btn-secondary">
+                <Link
+                  to={`/decks/${deckId}/edit`}
+                  className="btn btn-secondary"
+                >
                   <PencilIcon size={24} /> Edit
                 </Link>
                 {/* Change icon update link */}
 
                 <Link
                   to={`/decks/${deckId}/study`}
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   style={{ marginLeft: "10px" }}
                 >
                   <BookIcon size={24} /> Study
@@ -90,7 +93,7 @@ export default function Deck() {
 
                 <Link
                   to={`/decks/${deckId}/cards/new`}
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   style={{ marginLeft: "10px" }}
                 >
                   <PlusCircleIcon size={24} /> Add Cards
@@ -98,7 +101,7 @@ export default function Deck() {
                 {/* Change icon update link*/}
 
                 <button
-                  class="btn btn-danger"
+                  className="btn btn-danger"
                   style={{ float: "right" }}
                   onClick={() => deleteHandler(deck.id)}
                 >
@@ -125,14 +128,14 @@ export default function Deck() {
                       <div className="icons" style={{ float: "right" }}>
                         <Link
                           to={`/decks/${deckId}/cards/${card.id}/edit`}
-                          class="btn btn-primary"
+                          className="btn btn-primary"
                           style={{ size: "24px" }}
                         >
                           <PencilIcon size={24} /> Edit
                         </Link>
                         <button
                           onClick={() => deleteCardHandler(card.id)}
-                          class="btn btn-danger"
+                          className="btn btn-danger"
                           style={{ marginLeft: "10px" }}
                         >
                           <TrashIcon size={24} />
