@@ -12,6 +12,7 @@ export default function CreateDeck() {
       name: event.target.name.value,
       description: event.target.description.value,
     };
+
     try {
       const newDeck = await createDeck(deck);
       history.push(`/decks/${newDeck.id}`);
@@ -35,7 +36,7 @@ export default function CreateDeck() {
       <h2>Create Deck</h2>
       <form onSubmit={submitHandler}>
         <div className="form-group">
-          <label for="exampleFormControlInput1">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             required
             type="text"
@@ -47,7 +48,7 @@ export default function CreateDeck() {
         </div>
 
         <div className="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
+          <label htmlFor="description">Description</label>
           <textarea
             className="form-control"
             id="description"
@@ -68,10 +69,5 @@ export default function CreateDeck() {
         </button>
       </form>
     </>
-    //   {/*
-    // <button type="button" className="btn btn-secondary btn-lg">
-    //   <PlusIcon size={24} />
-    //   Create Deck
-    // </button> */}
   );
 }

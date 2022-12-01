@@ -86,6 +86,7 @@ export async function listDecks(signal) {
 export async function createDeck(deck, signal) {
   const url = `${API_BASE_URL}/decks`;
   const options = {
+    mode: "no-cors",
     method: "POST",
     headers,
     body: JSON.stringify(stripCards(deck)),
